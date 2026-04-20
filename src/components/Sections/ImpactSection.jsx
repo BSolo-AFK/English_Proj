@@ -17,7 +17,6 @@ export default function ImpactSection({
         <SectionHeading
           eyebrow="Impact visualization"
           title="A simple toggle can show the difference between traditional workflows and AI-enhanced support."
-          text="This section gives your article a stronger visual argument. The chart does not need to be final data at first — you can use it as an interactive concept to show what improves when AI helps farmers make earlier and more informed decisions."
           dark={darkMode}
         />
 
@@ -33,9 +32,6 @@ export default function ImpactSection({
           <CardContent className="p-6">
             <h3 className="mb-4 text-xl font-semibold">Field Loss Trend</h3>
             <LossTrendChart trendData={trendData} darkMode={darkMode} />
-            <p className={`mt-4 text-sm leading-6 ${theme.soft}`}>
-              Toggle the switch to compare a slower, more reactive workflow against one where AI improves early visibility and response.
-            </p>
           </CardContent>
         </Card>
 
@@ -43,9 +39,6 @@ export default function ImpactSection({
           <CardContent className="p-6">
             <h3 className="mb-4 text-xl font-semibold">Traditional vs AI-Enhanced</h3>
             <ComparisonRadarChart darkMode={darkMode} />
-            <p className={`mt-4 text-sm leading-6 ${theme.soft}`}>
-              This visualization helps explain your main claim: AI improves detection speed, visibility, and precision, which can support better profitability.
-            </p>
           </CardContent>
         </Card>
       </div>

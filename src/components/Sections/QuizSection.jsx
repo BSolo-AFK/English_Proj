@@ -7,8 +7,7 @@ export default function QuizSection({ darkMode, theme }) {
     <section id="quiz" className={`rounded-[32px] border p-8 md:p-10 ${theme.panel}`}>
       <SectionHeading
         eyebrow="Quiz section"
-        title="End the article with flashcards that make the key ideas memorable."
-        text="This keeps the site casual and interactive while still reinforcing the main ideas from your project. The cards flip when clicked, making it feel a little more like an educational magazine feature instead of a plain report."
+        title="Test Your Knowledge"
         dark={darkMode}
       />
 

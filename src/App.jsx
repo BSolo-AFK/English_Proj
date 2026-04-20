@@ -1,21 +1,22 @@
 import { useMemo, useState } from "react";
 import Sidebar from "./components/layout/Sidebar";
 import MobileHeader from "./components/layout/MobileHeader";
-import HeroSection from "./components/sections/HeroSection";
-import ProblemSection from "./components/sections/ProblemSection";
-import TopicsSection from "./components/sections/TopicsSection";
-import SolutionsSection from "./components/sections/SolutionsSection";
-import PestsSection from "./components/sections/PestsSection";
-import ImpactSection from "./components/sections/ImpactSection";
-import QuizSection from "./components/sections/QuizSection";
-import TimelineSection from "./components/sections/TimelineSection";
-import SourcesFooter from "./components/sections/SourcesFooter";
-
+import HeroSection from "./components/Sections/HeroSection";
+import ProblemSection from "./components/Sections/ProblemSection";
+import TopicsSection from "./components/Sections/TopicsSection";
+import SolutionsSection from "./components/Sections/SolutionsSection";
+import PestsSection from "./components/Sections/PestsSection";
+import ImpactSection from "./components/Sections/ImpactSection";
+import QuizSection from "./components/Sections/QuizSection";
+import TimelineSection from "./components/Sections/TimelineSection";
+import SourcesFooter from "./components/Sections/SourcesFooter";
 import { trendWithAi, trendWithoutAi } from "./data/charts";
+import FutureOfAgricultureSection from "./components/sections/FutureOfAgricultureSection";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [aiEnabled, setAiEnabled] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const trendData = useMemo(
     () => (aiEnabled ? trendWithAi : trendWithoutAi),
@@ -35,15 +36,28 @@ export default function App() {
   return (
     <div className={`min-h-screen w-full ${theme.page}`}>
       <div className="mx-auto flex max-w-[1600px]">
-        <Sidebar darkMode={darkMode} setDarkMode={setDarkMode} theme={theme} />
+        <Sidebar
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          theme={theme}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+        />
+
         <main className="flex-1 px-4 py-4 md:px-8 md:py-6 lg:px-10">
           <div className="mx-auto max-w-6xl space-y-6">
-            <MobileHeader darkMode={darkMode} setDarkMode={setDarkMode} theme={theme} />
+            <MobileHeader
+              darkMode={darkMode}
+              setDarkMode={setDarkMode}
+              theme={theme}
+              setIsMenuOpen={setIsMenuOpen}
+            />
 
             <HeroSection darkMode={darkMode} theme={theme} />
             <ProblemSection darkMode={darkMode} theme={theme} />
-            <TopicsSection darkMode={darkMode} theme={theme} />
-            <SolutionsSection darkMode={darkMode} theme={theme} />
+            <FutureOfAgricultureSection darkMode={darkMode} theme={theme} />
+            {/* <TopicsSection darkMode={darkMode} theme={theme} /> */}
+            {/* <SolutionsSection darkMode={darkMode} theme={theme} /> */}
             <PestsSection darkMode={darkMode} theme={theme} />
             <ImpactSection
               darkMode={darkMode}

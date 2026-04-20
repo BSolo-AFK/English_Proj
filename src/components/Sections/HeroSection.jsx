@@ -4,6 +4,7 @@ import Badge from "../ui/Badge";
 import Button from "../ui/Button";
 import StatCard from "../layout/StatCard";
 import { Card, CardContent } from "../ui/Card";
+import img from "../../assets/farm.jpg"; 
 
 export default function HeroSection({ darkMode, theme }) {
   return (
@@ -16,7 +17,7 @@ export default function HeroSection({ darkMode, theme }) {
             transition={{ duration: 0.6 }}
           >
             <Badge className="rounded-full bg-emerald-600 text-white">
-              School Project · Magazine Style
+              School Project · Turning the profits
             </Badge>
 
             <h1 className="mt-5 max-w-full break-words text-4xl font-semibold leading-tight md:text-5xl xl:text-6xl">
@@ -31,7 +32,7 @@ export default function HeroSection({ darkMode, theme }) {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button className="rounded-full bg-stone-900 text-white hover:bg-stone-800">
+              {/* <Button className="rounded-full bg-stone-900 text-white hover:bg-stone-800">
                 Explore the Article
               </Button>
               <Button
@@ -39,7 +40,7 @@ export default function HeroSection({ darkMode, theme }) {
                 className="rounded-full border-emerald-600/30 bg-transparent"
               >
                 View Solutions
-              </Button>
+              </Button> */}
             </div>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -65,54 +66,25 @@ export default function HeroSection({ darkMode, theme }) {
           </motion.div>
         </div>
 
-        <div
-          className={`relative min-h-[360px] border-l ${
-            darkMode ? "border-white/10" : "border-stone-200/70"
-          }`}
-        >
+<div
+  className={`relative min-h-[360px] min-w-0 overflow-hidden border-l ${
+    darkMode ? "border-white/10" : "border-stone-200/70"
+  }`}
+>
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(16,185,129,0.25),transparent_55%),linear-gradient(180deg,rgba(120,113,108,0.15),transparent)]" />
 
-          <div className="absolute inset-0 p-8 md:p-10">
-            <div className="grid h-full gap-4">
-              <Card className={`rounded-[28px] border ${theme.panel}`}>
-                <CardContent className="flex h-full min-h-[120px] items-center gap-4 p-5">
-                  <div
-                    className={`rounded-2xl p-3 ${
-                      darkMode ? "bg-emerald-500/10" : "bg-emerald-100"
-                    }`}
-                  >
-                    <Camera className={`h-6 w-6 ${theme.accent}`} />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Image-Based Crop Monitoring</p>
-                    <p className={`mt-1 text-sm leading-6 ${theme.soft}`}>
-                      Visual placeholders can be replaced with crop images,
-                      drone shots, or disease detection illustrations.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+          <div className="absolute inset-0 min-w-0 overflow-hidden p-8 md:p-10">
+            <div className="grid h-full min-w-0 gap-1 overflow-hidden">
+              <div className=" w-full overflow-hidden rounded-[18px] size-full border ">
+  <img
+    src={img}
+    alt="Farm"
+    className="block h-[190px] w-full object-cover h-full"
+  />
+</div>
+              <div className="grid min-w-0 gap-4 sm:grid-cols-2">
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <Card className={`rounded-[28px] border ${theme.panel}`}>
-                  <CardContent className="p-5">
-                    <Tractor className={`mb-3 h-7 w-7 ${theme.accent}`} />
-                    <p className="font-semibold">Farming + Technology</p>
-                    <p className={`mt-2 text-sm leading-6 ${theme.soft}`}>
-                      Use this space for a gif or illustration of smart farming systems.
-                    </p>
-                  </CardContent>
-                </Card>
 
-                <Card className={`rounded-[28px] border ${theme.panel}`}>
-                  <CardContent className="p-5">
-                    <ScanSearch className={`mb-3 h-7 w-7 ${theme.accent}`} />
-                    <p className="font-semibold">Pattern Detection</p>
-                    <p className={`mt-2 text-sm leading-6 ${theme.soft}`}>
-                      Highlight how AI can find patterns that humans may miss across large fields.
-                    </p>
-                  </CardContent>
-                </Card>
               </div>
             </div>
           </div>

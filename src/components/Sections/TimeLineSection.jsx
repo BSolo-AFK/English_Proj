@@ -8,8 +8,7 @@ export default function TimelineSection({ darkMode, theme }) {
     <section id="timeline" className={`rounded-[32px] border p-8 md:p-10 ${theme.panel}`}>
       <SectionHeading
         eyebrow="Project / team / timeline"
-        title="Present the project details in both text and a visual timeline format."
-        text="This section helps the website feel complete and presentation-ready. You can swap the placeholder names, dates, and milestones with your actual class project details."
+        title="Milestone timeline "
         dark={darkMode}
       />
 
@@ -32,13 +31,13 @@ export default function TimelineSection({ darkMode, theme }) {
               </div>
               <div>
                 <p className={`text-sm ${theme.soft}`}>Team Members</p>
-                <p className="font-medium">Add your team names here</p>
+                <p className="font-medium">Borys, Fahema, Denver</p>
               </div>
               <div>
                 <p className={`text-sm ${theme.soft}`}>Project Summary</p>
                 <p className={`leading-7 ${theme.muted}`}>
-                  A digital article project focused on how AI can improve agricultural monitoring, reduce preventable loss, and support smarter farmer decision-making.
-                </p>
+                  The modernization of agriculture has been a gradual process, but the integration of AI technologies is accelerating change in the industry. This project explores how AI can enhance agricultural practices.
+                </p>                
               </div>
             </div>
           </CardContent>
